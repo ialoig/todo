@@ -26,4 +26,4 @@ production:
   database: todo_app_prod
   pool: 5
   timeout: 5000
-  host: localhost
+  host: ec2-46-137-97-169.eu-west-1.compute.amazonaws.com
