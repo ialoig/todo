@@ -25,3 +25,5 @@ production:
   encoding: utf8
   database: todo_app_prod
   pool: 5
+  timeout: 5000
+  host: localhost
