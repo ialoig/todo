@@ -31,12 +31,7 @@ group :development, :test do
   gem 'web-console', '~> 2.0'
 end
 
-group :development do
-  # Access an IRB console on exception pages or by using <%= console %> in views
-
-end
-
-group :development do
+group :production do
 	gem 'pg'
 	gem 'rails_12factor'
 end
