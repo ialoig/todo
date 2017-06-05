@@ -1,0 +1,6 @@
+it:
+  classy_enum:
+    priority:
+      low: 'Bassa'
+      medium: 'Media'
+      high: 'Alta'
