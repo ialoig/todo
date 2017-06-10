@@ -22,6 +22,11 @@ class TodoItemsController < ApplicationController
 		redirect_to @todo_list, notice: "Todo item completed."
 	end
 
+	def uncomplete
+		@todo_item.update_attribute(:completed_at, '')
+		redirect_to @todo_list, notice: "Todo item uncompleted."
+	end
+
 	private
 
 	def set_todo_list
@@ -33,6 +38,6 @@ class TodoItemsController < ApplicationController
 	end
 
 	def todo_item_params
-		params[:todo_item].permit(:content)
+		params[:todo_item].permit(:content, :priority)
 	end
 end

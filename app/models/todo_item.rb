@@ -7,4 +7,8 @@ class TodoItem < ActiveRecord::Base
   def completed?
   	!completed_at.blank?
   end
+
+  def iconize_priority
+  	if priority
+  end
 end
