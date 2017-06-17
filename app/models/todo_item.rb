@@ -1,14 +1,11 @@
 class TodoItem < ActiveRecord::Base
-	include ClassyEnum::ActiveRecord
   belongs_to :todo_list
+  default_scope {order priority: :desc}
 
-  classy_enum_attr :priority, default: "medium"
+  enum priority: [:low, :medium, :high]
 
   def completed?
   	!completed_at.blank?
   end
 
-  def iconize_priority
-  	if priority
-  end
 end
