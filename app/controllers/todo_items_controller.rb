@@ -1,5 +1,5 @@
 class TodoItemsController < ApplicationController
-	before_action :set_todo_list
+	before_action :authenticate_user!, :set_todo_list
 	before_action :set_todo_item, except: [:create]
 
 	def create

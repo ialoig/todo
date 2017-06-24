@@ -15,6 +15,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'font-awesome-sass'
 gem 'classy_enum', '~> 4.0'
 gem 'material_icons'
+gem 'devise'
 
 group :development, :test do
   gem 'sqlite3'
