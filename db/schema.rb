@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20170617191051) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "todo_items", force: :cascade do |t|
     t.string   "content"
     t.integer  "todo_list_id"
@@ -22,7 +25,7 @@ ActiveRecord::Schema.define(version: 20170617191051) do
     t.integer  "priority"
   end
 
-  add_index "todo_items", ["todo_list_id"], name: "index_todo_items_on_todo_list_id"
+  add_index "todo_items", ["todo_list_id"], name: "index_todo_items_on_todo_list_id", using: :btree
 
   create_table "todo_lists", force: :cascade do |t|
     t.string   "title"

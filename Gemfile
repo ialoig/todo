@@ -16,13 +16,8 @@ gem 'font-awesome-sass'
 gem 'classy_enum', '~> 4.0'
 gem 'material_icons' 
 
-group :development, :test do
-  gem 'sqlite3'
-  gem 'byebug'
-  gem 'web-console', '~> 2.0'
-end
 
-group :production do
+group :production, :development, :test do
 	gem 'pg'
 	gem 'rails_12factor'
 end
