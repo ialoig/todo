@@ -25,20 +25,40 @@
  $dark: #1F7972;
 
 * {
-	box-sizing: border-box;
+ 	box-sizing: border-box;
 }
 html {
-  height: 100%;
+	height: 300%;
 }
 
 body {
- 	height: 100%;
-  background: -webkit-linear-gradient(40deg, #4CB8C4 10%, #EAECC6 100%);
-  background:    -moz-linear-gradient(40deg, #4CB8C4 10%, #EAECC6 100%);
-  background:     -ms-linear-gradient(40deg, #4CB8C4 10%, #EAECC6 100%);
-  background:      -o-linear-gradient(40deg, #4CB8C4 10%, #EAECC6 100%);
-  background:         linear-gradient(40deg, #4CB8C4 10%, #EAECC6 100%);
-  font-family: 'Lato', sans-serif;
+	height: 100%;
+	background: -webkit-linear-gradient(40deg, #4CB8C4 10%, #EAECC6 100%);
+	background:    -moz-linear-gradient(40deg, #4CB8C4 10%, #EAECC6 100%);
+	background:     -ms-linear-gradient(40deg, #4CB8C4 10%, #EAECC6 100%);
+	background:      -o-linear-gradient(40deg, #4CB8C4 10%, #EAECC6 100%);
+	background:         linear-gradient(40deg, #4CB8C4 10%, #EAECC6 100%);
+	font-family: 'Lato', sans-serif;
+}
+form {
+	margin-top: 2em;
+	padding: 0 5%;
+}
+h1 {
+	text-align: center;
+	font-weight: 700;
+	font-size: 2.5rem;
+	text-transform: uppercase;
+	color: white;
+	margin: 0;
+}
+h2 {
+	text-align: center;
+	font-weight: 700;
+	font-size: 2.0rem;
+	text-transform: uppercase;
+	color: white;
+	margin: 0;
 }
 
 .clearfix:before,
@@ -169,7 +189,6 @@ body {
 			border: none;
 			height: 40px;
 			border-radius: 4px;
-			width: 15%;
 			display: inline-block;
 			transition: all .4s ease-in-out;
 			cursor: pointer;
@@ -180,7 +199,16 @@ body {
 		::-webkit-input-placeholder { color: $dark; }
 	}
 }
-
+.links {
+	display: block;
+	margin: 1.5em auto 0 auto;
+	text-align: center;
+	font-size: 1.0em;
+	color: white;
+	a {
+		color: white;
+	}
+}
 select {
 	background: rgba(250, 250, 250, 0.4);
 	outline: none;
@@ -193,16 +221,6 @@ select {
 }
 select::-ms-expand { 
     display: none; /* remove default arrow on ie10 and ie11 */
-}
-.links {
-	display: block;
-	margin: 1.5em auto 0 auto;
-	text-align: center;
-	font-size: 0.8em;
-	color: white;
-	a {
-		color: white;
-	}
 }
 
 .forms {
@@ -221,16 +239,12 @@ input[type="text"], textarea {
 	border-radius: 4px;
 	padding: 1em 2em;
 }
-textarea {
-	height: 200px;
-}
 input[type="submit"] {
 	background: white;
 	outline: none;
 	border: none;
 	height: 40px;
 	border-radius: 4px;
-	width: 25%;
 	display: inline-block;
 	transition: all .4s ease-in-out;
 	cursor: pointer;
@@ -240,7 +254,7 @@ input[type="submit"] {
 		color: white;
 	}
 }
-input[type="email"], textarea {
+input[type="email"] {
 	width: 100%;
 	display: inline-block;
 	outline: none;
@@ -251,7 +265,7 @@ input[type="email"], textarea {
 	padding: 1em 2em;
 	margin-bottom: 10px;
 }
-input[type="password"], textarea {
+input[type="password"] {
 	width: 100%;
 	display: inline-block;
 	outline: none;
@@ -267,7 +281,9 @@ input[type="checkbox"] {
   margin-top: 1px \9; // IE8-9
   line-height: normal;
 }
-
+textarea {
+	height: 200px;
+}
 .field {
 	text-align: left;
     padding: 2px;
@@ -277,5 +293,15 @@ input[type="checkbox"] {
 .actions {
 	margin: 2px;
 	padding: 2px;
+}
+#error_explanation {
+	h2 {
+		text-align: center;
+		font-weight: 700;
+		font-size: 1.0rem;
+		text-transform: uppercase;
+		color: white;
+		margin: 0;
+	}
 }
 ::-webkit-input-placeholder { color: $dark; }

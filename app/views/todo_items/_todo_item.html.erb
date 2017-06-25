@@ -8,11 +8,11 @@
 	<div class="priority">
 		<p style="opacity: 0.4;">
 			<% if todo_item.high? %>
-				<i class="fa fa-arrow-up"></i>
+				<%= content_tag :i, "", class: "fa fa-arrow-up" %>
 			<% elsif todo_item.medium? %>
-				<i class="fa fa-minus"></i>
+				<%= content_tag :i, "", class: "fa fa-minus" %>
 			<% else %>
-				<i class="fa fa-arrow-down"></i>
+				<%= content_tag :i, "", class: "fa fa-arrow-down" %>
 			<%end %>
 		</p>
 	</div>
@@ -33,11 +33,11 @@
 	<div class="priority">
 		<p>
 			<% if todo_item.high? %>
-				<i class="fa fa-arrow-up"></i>
+				<%= content_tag :i, "", class: "fa fa-arrow-up" %>
 			<% elsif todo_item.medium? %>
-				<i class="fa fa-minus"></i>
+				<%= content_tag :i, "", class: "fa fa-minus" %>
 			<% else %>
-				<i class="fa fa-arrow-down"></i>
+				<%= content_tag :i, "", class: "fa fa-arrow-down" %>
 			<%end %>
 		</p>
 </div>
