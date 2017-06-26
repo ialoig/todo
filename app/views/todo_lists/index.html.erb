@@ -1,10 +1,14 @@
 <% if !user_signed_in? %>
 	<div class="index_row clearfix">
 		<p>
-			<%= link_to "Sign up to save your todo list", new_user_registration_path %>
+			<%= link_to "Sign up to save your todo list", new_user_session_path %>
 		</p>
 	</div>
 <% else %>
+	<p class="logout">Welcome  
+		<%= current_user.email %> | 
+		<%= link_to "Logout", destroy_user_session_path, method: :delete %>
+	</p>
 	<% @todo_lists.each do |todo_list| %>
 	  <div class="index_row clearfix">
 	    <h2 class="todo_list_title"><%= link_to todo_list.title, todo_list %></h2>

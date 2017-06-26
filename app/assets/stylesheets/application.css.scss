@@ -77,6 +77,12 @@ h2 {
 	color: $dark;
 	font-weight: 100;
 }
+#alert {
+	text-align: center;
+	font-size: 1.0em;
+	color: #e22626;
+	font-weight: 100;
+}
 
 .container {
 	width: 70%;
@@ -302,6 +308,14 @@ textarea {
 		text-transform: uppercase;
 		color: white;
 		margin: 0;
+	}
+}
+.logout {
+	text-align: right;
+	color: white;
+	a {
+		color: white;
+		text-decoration: underline;
 	}
 }
 ::-webkit-input-placeholder { color: $dark; }
