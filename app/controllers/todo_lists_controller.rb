@@ -1,22 +1,23 @@
 class TodoListsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_todo_list, only: [:show, :edit, :update, :destroy]
 
   def index
-    @todo_lists = TodoList.all
+    @todo_lists = current_user.todo_list.all
   end
 
   def show
   end
 
   def new
-    @todo_list = TodoList.new
+    @todo_list = current_user.todo_list.build
   end
 
   def edit
   end
 
   def create
-    @todo_list = TodoList.new(todo_list_params)
+    @todo_list = current_user.todo_list.build(todo_list_params)
 
     respond_to do |format|
       if @todo_list.save

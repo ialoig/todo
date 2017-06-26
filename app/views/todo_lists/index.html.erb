@@ -1,10 +1,22 @@
-<% @todo_lists.each do |todo_list| %>
-  <div class="index_row clearfix">
-    <h2 class="todo_list_title"><%= link_to todo_list.title, todo_list %></h2>
-    <p class="todo_list_sub_title"><%= todo_list.description %></p>
-  </div>
-<% end %>
+<% if !user_signed_in? %>
+	<div class="index_row clearfix">
+		<p>
+			<%= link_to "Sign up to save your todo list", new_user_session_path %>
+		</p>
+	</div>
+<% else %>
+	<p class="logout">Welcome  
+		<%= current_user.email %> | 
+		<%= link_to "Logout", destroy_user_session_path, method: :delete %>
+	</p>
+	<% @todo_lists.each do |todo_list| %>
+	  <div class="index_row clearfix">
+	    <h2 class="todo_list_title"><%= link_to todo_list.title, todo_list %></h2>
+	    <p class="todo_list_sub_title"><%= todo_list.description %></p>
+	  </div>
+	<% end %>
 
-<div class="links">
-  <%= link_to "New Todo list", new_todo_list_path %>
-</div>
+	<div class="links">
+	  <%= link_to "New Todo list", new_todo_list_path %>
+	</div>
+<% end %>

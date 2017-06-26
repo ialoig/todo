@@ -14,10 +14,16 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'font-awesome-sass'
 gem 'classy_enum', '~> 4.0'
-gem 'material_icons' 
+gem 'material_icons'
+gem 'devise'
 
+group :development, :test do
+  gem 'sqlite3'
+  gem 'byebug'
+  gem 'web-console', '~> 2.0'
+end
 
-group :production, :development, :test do
+group :production do
 	gem 'pg'
 	gem 'rails_12factor'
 end
