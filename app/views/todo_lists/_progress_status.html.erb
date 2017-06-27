@@ -1,0 +1,10 @@
+<% item_completion = @todo_list.item_completition %>
+<div class="progress">
+	<div id="progress-status" role="progressbar" aria-valuenow="<%= item_completion %>" aria-valuemin="0" aria-valuemax="100" ><%= item_completion %>%
+	</div>
+	<script type="text/javascript">
+		$(function() {
+			$("#progress-status").css("width", "<%= item_completion %>%");
+		});
+	</script>
+</div>

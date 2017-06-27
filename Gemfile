@@ -16,11 +16,14 @@ gem 'font-awesome-sass'
 gem 'classy_enum', '~> 4.0'
 gem 'material_icons'
 gem 'devise'
+gem 'bootstrap-sass', '~> 3.3.6'
 
 group :development, :test do
-  gem 'sqlite3'
-  gem 'byebug'
-  gem 'web-console', '~> 2.0'
+	gem "better_errors"
+	gem "binding_of_caller"
+	gem "byebug"
+	gem 'sqlite3'
+	#gem 'web-console', '~> 2.0'
 end
 
 group :production do
