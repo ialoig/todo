@@ -15,6 +15,7 @@ class TodoList < ActiveRecord::Base
 
 
 	def item_completition
-		(count_completed / self.todo_items.size.to_f) * 100 
+		division = (count_completed / self.todo_items.size.to_f) *100
+		return division.to_i
 	end
 end
