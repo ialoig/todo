@@ -9,6 +9,10 @@ Rails.application.routes.draw do
   	end
   end
   
+  devise_scope :user do
+    get "/sign-in" => "devise/sessions#new", :as => :login
+  end
+
   root "todo_lists#index"
 
 

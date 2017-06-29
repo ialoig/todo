@@ -2,6 +2,7 @@
 <p class="todo_list_sub_title"><%= @todo_list.description %></p>
 
 <div id="todo_items_wrapper">
+	<%= render "progress_status" %>
 	<%= render @todo_list.todo_items %>
 	<div id="form">
 		<%= render "todo_items/form" %>
