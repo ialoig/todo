@@ -17,6 +17,8 @@
 	<% end %>
 
 	<div class="links">
-	  <%= link_to "New Todo list", new_todo_list_path %>
+		<%= link_to new_todo_list_path do %>
+			<i class="fa fa-plus fa-lg"></i>
+		<% end %>
 	</div>
 <% end %>

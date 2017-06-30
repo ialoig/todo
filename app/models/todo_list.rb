@@ -1,9 +1,6 @@
 class TodoList < ActiveRecord::Base
 	has_many :todo_items, dependent: :destroy
 	belongs_to :user
-<<<<<<< HEAD
-=======
-
 	def count_completed
 		@todo_item = self.todo_items.all
 		count = 0
@@ -18,7 +15,10 @@ class TodoList < ActiveRecord::Base
 
 	def item_completition
 		division = (count_completed / self.todo_items.size.to_f) *100
-		return division.to_i
+		if division.nan?
+			division = 0
+		else
+			division.to_i
+		end
 	end
->>>>>>> master
 end

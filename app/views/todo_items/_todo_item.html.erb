@@ -8,11 +8,11 @@
 	<div class="priority">
 		<p style="opacity: 0.4;">
 			<% if todo_item.high? %>
-				<%= content_tag :i, "", class: "fa fa-arrow-up" %>
+			<%= content_tag :i, "", class: "fa fa-arrow-up" %>
 			<% elsif todo_item.medium? %>
-				<%= content_tag :i, "", class: "fa fa-minus" %>
+			<%= content_tag :i, "", class: "fa fa-minus" %>
 			<% else %>
-				<%= content_tag :i, "", class: "fa fa-arrow-down" %>
+			<%= content_tag :i, "", class: "fa fa-arrow-down" %>
 			<%end %>
 		</p>
 	</div>
@@ -27,27 +27,27 @@
 	<% else %>
 	<div class="complete">
 		<%= link_to complete_todo_list_todo_item_path(@todo_list, todo_item.id), method: :patch do %> 
-			<i class="fa fa-check"></i>
+		<i class="fa fa-check"></i>
 		<% end %>
 	</div>
 	<div class="priority">
 		<p>
 			<% if todo_item.high? %>
-				<%= content_tag :i, "", class: "fa fa-arrow-up" %>
+			<%= content_tag :i, "", class: "fa fa-arrow-up" %>
 			<% elsif todo_item.medium? %>
-				<%= content_tag :i, "", class: "fa fa-minus" %>
+			<%= content_tag :i, "", class: "fa fa-minus" %>
 			<% else %>
-				<%= content_tag :i, "", class: "fa fa-arrow-down" %>
+			<%= content_tag :i, "", class: "fa fa-arrow-down" %>
 			<%end %>
 		</p>
-</div>
-<div class="todo_item">
-	<p><%= todo_item.content %></p>
-</div>
-<div class="trash">
-	<%= link_to todo_list_todo_item_path(@todo_list, todo_item.id), method: :delete, data: {confirm: "Are you sure ?"} do %>
-	<i class="fa fa-trash"></i>
+	</div>
+	<div class="todo_item">
+		<p><%= todo_item.content %></p>
+	</div>
+	<div class="trash">
+		<%= link_to todo_list_todo_item_path(@todo_list, todo_item.id), method: :delete, data: {confirm: "Are you sure ?"} do %>
+		<i class="fa fa-trash"></i>
+		<% end %>
+	</div>
 	<% end %>
-</div>
-<% end %>
 </div>
