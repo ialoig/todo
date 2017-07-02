@@ -4,15 +4,19 @@ class TodoItemsController < ApplicationController
 	before_action :set_todo_item, except: [:create]
 
 	def create
-		@todo_item = @todo_list.todo_items.create(todo_item_params)
+		if todo_item_params[:content].blank?
+			flash[:alert] = "Todo item could not be created with null value."
+		else
+			@todo_item = @todo_list.todo_items.create(todo_item_params)
+		end
 		redirect_to @todo_list
 	end
 
 	def destroy
 		if @todo_item.destroy
-			flash[:success] = "Todo item was deleted."
+			flash[:notice] = "Todo item was deleted."
 		else
-			flash[:error] = "Todo item could not be deleted."
+			flash[:alert] = "Todo item could not be deleted."
 		end
 		redirect_to @todo_list
 	end

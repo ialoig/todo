@@ -1,5 +1,8 @@
 <%= form_for ([@todo_list, @todo_list.todo_items.build]) do |f| %>
 	<%= f.text_field :content, placeholder: "New Todo" %>
   	<%= f.select :priority, Priority.select_options %>
-	<%= f.submit %>
+
+	<%= button_tag(type: 'submit') do %>
+  		<span class="fa fa-plus fa-lg"></span> 
+	<% end %>
 <% end %>
